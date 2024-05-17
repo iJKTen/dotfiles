@@ -30,3 +30,16 @@ vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
 vim.opt.wildignore:append { '*/node_nodules/*'}
+
+-- Create an autocommand group
+vim.api.nvim_create_augroup("MarkdownColorColumn", { clear = true })
+
+-- Set the color column to 80 for Markdown files
+vim.api.nvim_create_autocmd("FileType", {
+  group = "MarkdownColorColumn",
+  pattern = "markdown",
+  callback = function()
+    vim.opt.colorcolumn = "80"
+  end
+})
+
