@@ -32,5 +32,5 @@ vim.keymap.set("n", "-", "<C-x>")
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
 
-vim.keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
+vim.keymap.set("n", "sh", ":split<Return><C-w>w", { silent = true })
 vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })

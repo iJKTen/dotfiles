@@ -1,4 +1,4 @@
---\vim.opt.guicursor = ""
+--vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -23,7 +23,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -31,15 +31,5 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 vim.opt.wildignore:append { '*/node_nodules/*'}
 
--- Create an autocommand group
-vim.api.nvim_create_augroup("MarkdownColorColumn", { clear = true })
-
--- Set the color column to 80 for Markdown files
-vim.api.nvim_create_autocmd("FileType", {
-  group = "MarkdownColorColumn",
-  pattern = "markdown",
-  callback = function()
-    vim.opt.colorcolumn = "80"
-  end
-})
-
+vim.g.netrw_liststyle = 3
+-- vim.g.netrw_banner = 0
