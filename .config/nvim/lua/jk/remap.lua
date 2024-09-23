@@ -15,8 +15,6 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
--- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww open_project<CR>")
-
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
@@ -30,7 +28,7 @@ vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 
 -- Select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+vim.keymap.set("n", "<leader>a", "gg<S-v>G")
 
 vim.keymap.set("n", "sh", ":split<Return><C-w>w", { silent = true })
 vim.keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })

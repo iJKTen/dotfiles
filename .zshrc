@@ -62,6 +62,8 @@ function open_project() {
 
         if [ $? != 0 ]; then
             tmux new-session -d -s "$session_name" -c "$chosen_dir"
+            tmux new-window -t "$session_name" -n "prompt$" -c "$chosen_dir"
+            tmux select-window -t "$session_name:0"
         fi
 
         tmux attach-session -t "$session_name"
@@ -84,4 +86,5 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export CLICOLOR=1
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-
+export TERM="xterm-256color"
+export COLORTERM="truecolor"

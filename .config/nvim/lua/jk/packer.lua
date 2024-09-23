@@ -8,23 +8,15 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
-
- --  use ({
-	-- 'rose-pine/neovim',
-	-- as = 'rose-pine',
-	-- config = function()
-	-- 	vim.cmd('colorscheme rose-pine')
-	-- end
- --  })
 
   use { "catppuccin/nvim", as = "catppuccin" }
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('ThePrimeagen/harpoon')
+  use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  -- use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
@@ -49,28 +41,32 @@ return require('packer').startup(function(use)
   use("williamboman/mason-lspconfig.nvim")
 
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v3.x',
-	  requires = {
-		  --- Uncomment the two plugins below if you want to manage the language servers from neovim
-		  -- {'williamboman/mason.nvim'},
-		  -- {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    requires = {
+      --- Uncomment the two plugins below if you want to manage the language servers from neovim
+      -- {'williamboman/mason.nvim'},
+      -- {'williamboman/mason-lspconfig.nvim'},
 
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'L3MON4D3/LuaSnip'},
-	  }
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'L3MON4D3/LuaSnip' },
+    }
   }
 
-  use("github/copilot.vim")
+  -- use("github/copilot.vim")
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  use 'mfussenegger/nvim-dap'
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
+  use "theHamsta/nvim-dap-virtual-text"
+  use "nvim-neotest/nvim-nio"
   -- use("vapor-community/vim-leaf")
-
 end)
